@@ -6,26 +6,23 @@ import javafx.scene.control.Button;
 
 import javafx.scene.control.TextField;
 
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
-import java.util.Date;
+import org.springframework.beans.factory.annotation.Autowired;
+
+import com.believeus.ESGUI.service.FileMetaDataService;
 
 import javafx.event.ActionEvent;
 
 public class IndexController {
 	@FXML
-	private Button myButton;
+	private Button search;
 	@FXML
-	private TextField myTextField;
+	private TextField searchContent;
+	@Autowired
+	private FileMetaDataService fileMetaDataService;
 
-	// Event Listener on Button[#myButton].onAction
+	// Event Listener on Button[#search].onAction
 	@FXML
-	public void showTime(ActionEvent event) {
-		Date now = new Date();
-
-		DateFormat df = new SimpleDateFormat("yyyy-dd-MM HH:mm:ss");
-		String dateTimeString = df.format(now);
-		// Show in VIEW
-		myTextField.setText(dateTimeString);
+	public void search(ActionEvent event) {
+		fileMetaDataService.findByContent(searchContent.getText());
 	}
 }
