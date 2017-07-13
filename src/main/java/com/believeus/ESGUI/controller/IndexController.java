@@ -10,8 +10,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 import com.believeus.ESGUI.service.FileMetaDataService;
 
+import de.felixroske.jfxsupport.FXMLController;
 import javafx.event.ActionEvent;
 
+@FXMLController
 public class IndexController {
 	@FXML
 	private Button search;
