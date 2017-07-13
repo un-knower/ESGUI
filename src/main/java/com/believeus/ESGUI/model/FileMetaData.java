@@ -13,7 +13,7 @@ public class FileMetaData implements Serializable{
 	 */
 	private static final long serialVersionUID = -6124251801958183516L;
 
-	private Long id;
+	private String id;
 	
 	private String content;
 	
@@ -24,11 +24,11 @@ public class FileMetaData implements Serializable{
 	private String suffix;
 	
 	@Id
-	public Long getId() {
+	public String getId() {
 		return id;
 	}
 
-	public void setId(Long id) {
+	public void setId(String id) {
 		this.id = id;
 	}
 
