@@ -5,7 +5,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane prefHeight="300.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.believeus.ESGUI.IndexController">
+<AnchorPane prefHeight="300.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.believeus.ESGUI.controller.IndexController">
    <children>
       <Button fx:id="search" layoutX="422.0" layoutY="86.0" mnemonicParsing="false" onAction="#search" text="search" />
       <TextField fx:id="searchContent" layoutX="127.0" layoutY="86.0" prefHeight="29.0" prefWidth="295.0" />
