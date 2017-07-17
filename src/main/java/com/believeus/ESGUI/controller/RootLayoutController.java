@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import com.anosi.asset.exception.CustomRunTimeException;
 import com.believeus.ESGUI.fileGenerate.FileGenerateAdapter;
 
+import de.felixroske.jfxsupport.FXMLController;
 import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -18,6 +19,7 @@ import javafx.scene.control.MenuItem;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 
+@FXMLController
 public class RootLayoutController {
 
 	private static final Logger logger = LoggerFactory.getLogger(RootLayoutController.class);

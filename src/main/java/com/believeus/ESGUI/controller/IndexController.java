@@ -8,7 +8,9 @@ import javafx.scene.control.TextField;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
+import com.believeus.ESGUI.EsguiApplication;
 import com.believeus.ESGUI.service.FileMetaDataService;
+import com.believeus.ESGUI.view.ResultView;
 
 import de.felixroske.jfxsupport.FXMLController;
 import javafx.event.ActionEvent;
@@ -26,5 +28,8 @@ public class IndexController {
 	@FXML
 	public void search(ActionEvent event) {
 		fileMetaDataService.findByContent(searchContent.getText());
+		
+		//跳转
+		EsguiApplication.showView(ResultView.class);
 	}
 }
