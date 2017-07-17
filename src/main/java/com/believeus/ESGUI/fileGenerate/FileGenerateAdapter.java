@@ -2,35 +2,24 @@ package com.believeus.ESGUI.fileGenerate;
 
 import java.io.File;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import com.anosi.asset.exception.CustomRunTimeException;
-import com.believeus.ESGUI.service.FileMetaDataService;
 
 @Component
 public class FileGenerateAdapter {
-	
-	@Autowired
-	private FileMetaDataService fileMetaDataService;
-	@Autowired
-	private TxtFileGenerate txtFileGenerate;
 
-	public void adapter(File file){
+	public FileGenerate adapter(File file){
 		String suffix = file.getName().substring(file.getName().lastIndexOf("."));
 		switch (suffix) {
 		case "txt":
-			fileMetaDataService.save(txtFileGenerate.fileMetaData(file));
-			break;
+			return new TxtFileGenerate();
 		case "doc":
-			
-			break;
+			return new WordFileGenerate();
 		case "xlsx":
-			
-			break;
+			return new ExcelFileGenerate();
 		case "csv":
-			
-			break;
+			return new CsvFileGenerate();
 		default:
 			throw new CustomRunTimeException("不支持该类型文件:"+suffix);
 		}
