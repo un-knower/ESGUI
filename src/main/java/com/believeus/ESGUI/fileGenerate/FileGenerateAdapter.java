@@ -10,7 +10,7 @@ import com.anosi.asset.exception.CustomRunTimeException;
 public class FileGenerateAdapter {
 
 	public FileGenerate adapter(File file){
-		String suffix = file.getName().substring(file.getName().lastIndexOf("."));
+		String suffix = file.getName().substring(file.getName().lastIndexOf(".")+1);
 		switch (suffix) {
 		case "txt":
 			return new TxtFileGenerate();

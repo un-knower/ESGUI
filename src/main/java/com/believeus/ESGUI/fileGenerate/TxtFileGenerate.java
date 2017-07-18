@@ -1,13 +1,11 @@
 package com.believeus.ESGUI.fileGenerate;
 
 import java.io.File;
-import java.io.IOException;
-import java.nio.charset.Charset;
 
-import org.apache.commons.io.FileUtils;
 import org.springframework.stereotype.Component;
 
 import com.believeus.ESGUI.model.FileMetaData;
+import com.believeus.ESGUI.util.TxtUtil;
 
 /***
  * 为txt文件建立metaData
@@ -21,14 +19,7 @@ public class TxtFileGenerate implements FileGenerate{
 	public FileMetaData fileMetaData(File file) {
 		//设置默认属性
 		FileMetaData fileMetaData = defaultMetaData(file, new FileMetaData());
-		try {
-			//TODO 测试字符集
-			fileMetaData.setContent(FileUtils.readFileToString(file,Charset.defaultCharset()));
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		
+		fileMetaData.setContent(TxtUtil.readTxt(file));
 		return fileMetaData;
 	}
 

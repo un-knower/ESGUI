@@ -6,6 +6,7 @@ import java.io.IOException;
 
 import org.apache.poi.hwpf.HWPFDocument;
 import org.apache.poi.hwpf.usermodel.Range;
+import org.apache.poi.poifs.filesystem.OfficeXmlFileException;
 import org.apache.poi.xwpf.extractor.XWPFWordExtractor;
 import org.apache.poi.xwpf.usermodel.XWPFDocument;
 
@@ -27,18 +28,12 @@ public class WordUtil {
 			hdoc = new HWPFDocument(new FileInputStream(file));
 			Range rang = hdoc.getRange();
 			sb.append(rang.text());
-		} catch (Exception e) {
+		} catch (OfficeXmlFileException e) {
 			// 捕获版本异常
 			xdoc = new XWPFDocument(new FileInputStream(file));
 			extractor = new XWPFWordExtractor(xdoc);
 			sb.append(extractor.getText());
 		}finally {
-			if(hdoc!=null){
-				hdoc.close();
-			}
-			if(xdoc!=null){
-				hdoc.close();
-			}
 			if(extractor!=null){
 				extractor.close();
 			}

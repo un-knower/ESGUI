@@ -12,5 +12,5 @@ public class EsguiApplication extends AbstractJavaFxApplicationSupport {
 	public static void main(String[] args) {
 		launchApp(EsguiApplication.class,IndexView.class, args);
 	}
-
+	
 }

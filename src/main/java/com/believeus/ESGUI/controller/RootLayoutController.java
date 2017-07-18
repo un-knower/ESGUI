@@ -57,7 +57,6 @@ public class RootLayoutController {
 
 			alert.showAndWait();
 		}
-
 	}
 
 	// Event Listener on MenuItem[#close].onAction

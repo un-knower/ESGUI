@@ -32,6 +32,7 @@ public class CSVUtil {
 	        			excelTable.put(i, headers[j], values[j]);//设置值
 					}
 	        	}
+	        	i++;
 	        }
 		} catch (FileNotFoundException e) {
 			// TODO Auto-generated catch block

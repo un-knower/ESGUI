@@ -13,10 +13,10 @@ public class CsvFileGenerate implements FileGenerate{
 		// 设置默认属性
 		FileMetaData fileMetaData = defaultMetaData(file, new FileMetaData());
 		
-		Table<Integer, String, Object> excelTable = CSVUtil.readCsv(file);
+		Table<Integer, String, Object> csvTable = CSVUtil.readCsv(file);
 		StringBuilder sb = new StringBuilder();
 		
-		excelTable.rowMap().forEach((key,value)->{
+		csvTable.rowMap().forEach((key,value)->{
 			value.forEach((subKey,subValue)->{
 				sb.append(subValue+"\t");
 			});
